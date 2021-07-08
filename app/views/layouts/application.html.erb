@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ShareShop</title>
+    <title>ShareShop(仮)</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,31 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <%# render partial: "header" %>
+      <h2>ShareShop(仮)</h2>
+      <ul>
+        <% if controller.controller_name == "tops" && controller.action_name == "index" %>
+          <li></li>
+        <% else %>
+          <li></li>
+          <li><%= link_to "トップへ", root_path %></li>
+        <% end %>
+        <% if user_signed_in? %>
+          <li><%= link_to "ユーザー情報の編集", edit_user_registration_path %></li>
+          <li><%= link_to "サインアウト", destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to "サインイン", new_user_session_path %></li>
+          <li><%= link_to "サインアップ",  new_user_registration_path %></li>
+        <% end %>
+      </ul>
+    </header>
+    <main>
+      <%= yield %>
+    </main>
+    <footer>
+      <%# render partial: "footer" %>
+      <p>Copyright © 2021 Domitory1. Takeru Uraki, Yoshihisa Tanaka<p>
+    </footer>
   </body>
 </html>
