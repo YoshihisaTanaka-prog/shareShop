@@ -10,31 +10,17 @@
   </head>
 
   <body>
-    <header>
-      <%# render partial: "header" %>
-      <h2>ShareShop(仮)</h2>
-      <ul>
-        <% if controller.controller_name == "tops" && controller.action_name == "index" %>
-          <li></li>
-        <% else %>
-          <li></li>
-          <li><%= link_to "トップへ", root_path %></li>
-        <% end %>
-        <% if user_signed_in? %>
-          <li><%= link_to "ユーザー情報の編集", edit_user_registration_path %></li>
-          <li><%= link_to "サインアウト", destroy_user_session_path, method: :delete %></li>
-        <% else %>
-          <li><%= link_to "サインイン", new_user_session_path %></li>
-          <li><%= link_to "サインアップ",  new_user_registration_path %></li>
-        <% end %>
-      </ul>
-    </header>
+    <% case params[:lang] %>
+    <% when "eng" %>
+      <%= render partial: "layouts/headerEng" %>
+    <% when "china" %>
+      <%= render partial: "layouts/headerChina" %>
+    <% else %>
+      <%= render partial: "layouts/headerJp" %>
+    <% end %>  
     <main>
       <%= yield %>
     </main>
-    <footer>
-      <%# render partial: "footer" %>
-      <p>Copyright © 2021 Domitory1. Takeru Uraki, Yoshihisa Tanaka<p>
-    </footer>
+    <%= render partial: "layouts/footer" %>
   </body>
 </html>
