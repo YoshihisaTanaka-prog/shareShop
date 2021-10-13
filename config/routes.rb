@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  get "AAA" => "shops#index"
-
+  get "shops" => "shops#index"
+  post "shops/create" => "shops#create"
+  get "shops/new" => "shops#new" 
   #devise_for :users
  
     devise_for :users, controllers: {
@@ -10,4 +11,6 @@ Rails.application.routes.draw do
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root 'tops#index'
+
+
 end
