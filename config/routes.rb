@@ -10,7 +10,10 @@ Rails.application.routes.draw do
     }
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  root 'tops#index'
 
+  # 大元のページ
+  root 'tops#index'
+  # 言語選択用のルート
+  get 'language', to: 'tops#set_language'
 
 end

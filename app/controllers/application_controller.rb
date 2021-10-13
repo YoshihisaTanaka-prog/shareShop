@@ -20,13 +20,17 @@ class ApplicationController < ActionController::Base
             session[:language] = 'Japanese'
             @language = 'Japanese'
         end
+        # ヘッダーに書く内容を決定
         case @language
         when 'Japanese'
-            @language_option = [['言語・Language・语言','#'],['English'],[]]
+            @language_option = [['言語・Language・语言', '#'], ['English', language_path(:language => 'English')], ['中国', language_path(:language => 'Chinese')]]
+            @header_file_name = 'layouts/headerJp'
         when 'English'
-            @language_option = [['言語・Language・语言','#'],[],[]]
+            @language_option = [['Language・言語・语言', '#'], ['日本語', language_path(:language => 'Japanese')], ['中国', language_path(:language => 'Chinese')]]
+            @header_file_name = 'layouts/headerEng'
         when 'Chinese'
-            @language_option = [['言語・Language・语言','#'],[],[]]
+            @language_option = [['语言・言語・Language', '#'], ['日本語', language_path(:language => 'Japanese')], ['English', language_path(:language => 'English')]]
+            @header_file_name = 'layouts/headerChina'
         end
     end
 

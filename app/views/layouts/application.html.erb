@@ -10,14 +10,7 @@
   </head>
 
   <body>
-    <% case params[:lang] %>
-    <% when "eng" %>
-      <%= render partial: "layouts/headerEng" %>
-    <% when "china" %>
-      <%= render partial: "layouts/headerChina" %>
-    <% else %>
-      <%= render partial: "layouts/headerJp" %>
-    <% end %>  
+    <%= render partial: @header_file_name%>
     <main>
       <%= yield %>
     </main>

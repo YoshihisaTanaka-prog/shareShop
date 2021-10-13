@@ -3,22 +3,18 @@
     <ul>
         <li></li>
         <li>
-            <select name="select" onChange="location.href=value;">
-                <% path = request.path %>
-                <option value="#">Select Language</option>
-                <option value=<%= path + "?lang=jp" %>>日本語</option>
-                <option value=<%= path + "?lang=china" %>>中国</option>
-            </select>
+            <%= render partial: "layouts/languageOption" %>
         </li>
         <% if controller.controller_name == "tops" && controller.action_name == "index" %>
-            <li><%= link_to "To Top Page", root_path(:lang => "eng") %></li>
+        <% else %>
+            <li><%= link_to "To Top Page", root_path %></li>
         <% end %>
         <% if user_signed_in? %>
-            <li><%= link_to "Edit your user information", edit_user_registration_path(:lang => "eng") %></li>
-            <li><%= link_to "Sign Out", destroy_user_session_path(:lang => "eng"), method: :delete %></li>
+            <li><%= link_to "Edit your user information", edit_user_registration_path %></li>
+            <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
         <% else %>
-            <li><%= link_to "Sign In", new_user_session_path(:lang => "eng") %></li>
-            <li><%= link_to "Sign Up",  new_user_registration_path(:lang => "eng") %></li>
+            <li><%= link_to "Sign In", new_user_session_path %></li>
+            <li><%= link_to "Sign Up",  new_user_registration_path %></li>
         <% end %>
     </ul>
 </header>
