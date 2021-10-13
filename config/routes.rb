@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  get "AAA" => "shops#index"
-
+  get "shops" => "shops#index"
+  post "shops/create" => "shops#create"
+  get "shops/new" => "shops#new" 
   #devise_for :users
  
     devise_for :users, controllers: {
@@ -14,6 +15,5 @@ Rails.application.routes.draw do
   root 'tops#index'
   # 言語選択用のルート
   get 'language', to: 'tops#set_language'
-
 
 end
