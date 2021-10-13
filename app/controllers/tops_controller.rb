@@ -13,4 +13,19 @@ class TopsController < ApplicationController
             end
         end
     end
+
+    def set_language
+        if user_signed_in?
+            # ユーザーがサインインしている場合
+            # ユーザーテーブルに保存されている言語を更新
+            current_user.language = params[:language]
+            current_user.save
+        else
+            # ユーザーがサインインしていない場合
+            # 言語のセッションを更新
+            session[:language] = params[:language]
+        end
+        # 元のページに戻る
+        redirect_to request.referrer || root_url
+    end
 end

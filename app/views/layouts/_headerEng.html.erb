@@ -1,26 +1,16 @@
 <header>
     <h2>ShareShop(Maybe change name)</h2>
     <ul>
+        <li></li>
+        <li>
+            <select name="select" onChange="location.href=value;">
+                <% path = request.path %>
+                <option value="#">Select Language</option>
+                <option value=<%= path + "?lang=jp" %>>日本語</option>
+                <option value=<%= path + "?lang=china" %>>中国</option>
+            </select>
+        </li>
         <% if controller.controller_name == "tops" && controller.action_name == "index" %>
-            <li></li>
-            <li>
-                <select name="select" onChange="location.href=value;">
-                    <% path = request.path %>
-                    <option value="#">Select Language</option>
-                    <option value=<%= path + "?lang=jp" %>>日本語</option>
-                    <option value=<%= path + "?lang=china" %>>中国</option>
-                </select>
-            </li>
-        <% else %>
-            <li></li>
-            <li>
-                <select name="select" onChange="location.href=value;">
-                    <% path = request.path %>
-                    <option value="#">Select Language</option>
-                    <option value=<%= path + "?lang=jp" %>>日本語</option>
-                    <option value=<%= path + "?lang=china" %>>中国</option>
-                </select>
-            </li>
             <li><%= link_to "To Top Page", root_path(:lang => "eng") %></li>
         <% end %>
         <% if user_signed_in? %>
