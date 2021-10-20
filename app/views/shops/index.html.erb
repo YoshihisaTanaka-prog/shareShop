@@ -3,7 +3,10 @@
 
 
 <%@shoplist.each do |shop|%>
-<%=shop%>
+<%=shop.japanese_name%>
 
 <%end%>
 <p>Find me in app/views/shops/index.html.erb</p>
+
+<%# aがリンクという意味で、店の新規投稿に飛ばす %>
+<a href="/shops/new">新規投稿</a>
