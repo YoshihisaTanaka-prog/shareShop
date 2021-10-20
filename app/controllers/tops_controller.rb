@@ -10,8 +10,6 @@ class TopsController < ApplicationController
                 @page_name = "jpIndexSignedIn"
             when 'English' 
                 @page_name = "engIndexSignedIn"
-            when 'Chinese'
-                @page_name = "chinaIndexSignedIn"
             end
         else
             # 各言語に対応させる。
@@ -20,8 +18,6 @@ class TopsController < ApplicationController
                 @page_name = "jpIndexSignedOut"
             when 'English' 
                 @page_name = "engIndexSignedOut"
-            when 'Chinese'
-                @page_name = "chinaIndexSignedOut"
             end
         end
     end
@@ -29,7 +25,7 @@ class TopsController < ApplicationController
     # 言語選択用のアクション
     def set_language
         # まず、送られてきた言語の情報が適切なものかどうか判定する。
-        if ['Japanese','English','Chinese'].include?(params[:language])
+        if ['Japanese','English'].include?(params[:language])
             # 送られてきた言語の情報が適切なとき
             if user_signed_in?
                 # ユーザーがサインインしている場合

@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  validates :language, inclusion: {in: ['Japanese','English','Chinese']}
+  validates :language, inclusion: {in: ['Japanese','English']}
   validates :email, format: {with: /\A.*kyushu-u.ac.jp\z/}
   validates :room, presence: true
   validates :name, presence: true
