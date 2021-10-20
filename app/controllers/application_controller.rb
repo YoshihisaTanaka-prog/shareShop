@@ -34,6 +34,16 @@ class ApplicationController < ActionController::Base
         end
     end
 
+    def is_admin
+        if user_signed_in?
+            if !current_user.admin
+                redirect_to request.referrer || root_url
+            end
+        else
+            redirect_to request.referrer || root_url
+        end
+    end
+
     # devise用のカラムを追加するために必要
     before_action :configure_permitted_parameters, if: :devise_controller?
     def configure_permitted_parameters

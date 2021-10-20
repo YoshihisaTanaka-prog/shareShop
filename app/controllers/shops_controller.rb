@@ -1,4 +1,6 @@
 class ShopsController < ApplicationController
+  before_action :is_admin # （application_controller.rbに必要なコードを書いているので）この一行を追加するとこのコントローラーは管理者しかアクセスできなくなります。
+
   # 今まで投稿された店の名前を全部見れる
   def index
     @shoplist = Shop.all
