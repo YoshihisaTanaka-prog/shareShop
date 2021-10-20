@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2021_10_13_112855) do
 
   create_table "shops", force: :cascade do |t|
     t.string "japanese_name"
-    t.string "engilsh_name"
+    t.string "english_name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

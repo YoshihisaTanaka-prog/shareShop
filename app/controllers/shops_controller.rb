@@ -13,9 +13,12 @@ class ShopsController < ApplicationController
 # 投稿した店をshopテーブルに追加する
   def create
     # フォームから送信されたデータを受け取り、保存する処理を追加してください
-    @shop = Shop.new(japanese_name: params[:content])
+    #params[:content]で飛ばす前のページ（new.html.erb)のname="content"と対応する
+    @shop = Shop.new(japanese_name: params[:japanese_content] , english_name: params[:english_content])
+
     @shop.save
-    redirect_to("/shops")
+
+     redirect_to("/shops")
   end
 end
 
