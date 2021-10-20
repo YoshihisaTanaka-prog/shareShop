@@ -3,7 +3,12 @@
 
 
 <%@shoplist.each do |shop|%>
-<%=shop.japanese_name%>
+    <% case @language %>
+    <% when 'japanese' %>
+        <%= shop.japanese_name %>
+    <% when 'english' %>
+        <%= shop.english_name %>
+    <% end %>
 
 <%end%>
 <p>Find me in app/views/shops/index.html.erb</p>
