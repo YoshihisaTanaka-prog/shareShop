@@ -2,6 +2,12 @@ Rails.application.routes.draw do
   get "shops" => "shops#index"
   post "shops/create" => "shops#create"
   get "shops/new" => "shops#new" 
+
+  get"foods" => "foods#index"
+  post "foods/create" => "foods#create"
+  get "foods/new" => "foods#new"
+
+  
   #devise_for :users
  
     devise_for :users, controllers: {

@@ -1,0 +1,17 @@
+<h1>Foods#index</h1>
+
+
+
+<%@foodlist.each do |food|%>
+    <% case @language %>
+    <% when 'Japanese' %>
+        <%= food.japanese_name %>
+    <% when 'English' %>
+        <%= food.english_name %>
+    <% end %>
+
+<%end%>
+<p>Find me in app/views/foods/index.html.erb</p>
+
+<%# aがリンクという意味で、食べ物の新規投稿に飛ばす %>
+<a href="/foods/new">新規投稿</a>

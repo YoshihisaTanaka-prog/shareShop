@@ -1,0 +1,20 @@
+<!-- 投稿ボタンを押したら画面がリストが表示されたものに切り替わる-->
+<div class="main posts-new">
+  <div class="container">
+    <h1 class="form-heading">投稿する</h1>
+    <%= form_tag("/foods/create") do %>
+      <div class="form">
+        <div class="form-body">
+          <!-- <textarea>タグにname属性を追加してください -->
+          日本語
+          <input type="text" name="japanese_content">
+            <br> 
+          English
+          <input type="text" name="english_content">
+          <br>
+          <input type="submit" value="投稿">
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
