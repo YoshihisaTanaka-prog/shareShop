@@ -4,12 +4,10 @@ class FoodsController < ApplicationController
     # 今まで投稿された店の名前を全部見れる
   def index
     @foodlist = Food.all
-
   end
 
   #new.html.erbのためなので何も書かない
   def new
-    
   end
 
 # 投稿した店をfoodテーブルに追加する
@@ -20,6 +18,6 @@ class FoodsController < ApplicationController
 
     @food.save
 
-     redirect_to("/foods")
+    redirect_to("/foods")
   end
 end

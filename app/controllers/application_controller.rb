@@ -23,11 +23,11 @@ class ApplicationController < ActionController::Base
         # ヘッダーに書く内容を決定
         case @language
         when 'Japanese'
-            @setting_option = [['設定', '#'], ['店', shops_path]]
+            @setting_option = [['設定', '#'], ['店', shops_path], ['食べ物', foods_path]]
             @language_option = [['言語・Language', '#'], ['English', language_path(:language => 'English')]]
             @header_file_name = 'layouts/headerJp'
         when 'English'
-            @setting_option = [['Setting', '#'], ['shops', shops_path]]
+            @setting_option = [['Setting', '#'], ['shops', shops_path], ['foods', foods_path]]
             @language_option = [['Language・言語', '#'], ['日本語', language_path(:language => 'Japanese')]]
             @header_file_name = 'layouts/headerEng'
         end
