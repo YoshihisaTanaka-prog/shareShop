@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
   get "shops" => "shops#index"
   post "shops/create" => "shops#create"
-  get "shops/new" => "shops#new" 
+  get "shops/new" => "shops#new"
+  get "shops/:id/edit"  => "shops#edit"
 
-  get"foods" => "foods#index"
+  get "foods" => "foods#index"
   post "foods/create" => "foods#create"
   get "foods/new" => "foods#new"
+  get "foods/:id/edit" => "foods#edit"
+  get "foods/:id" => "foods#show"
 
   
   #devise_for :users

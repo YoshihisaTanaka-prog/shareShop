@@ -10,6 +10,7 @@ class ShopsController < ApplicationController
   def new
   end
 
+  
 # 投稿した店をshopテーブルに追加する
   def create
     # フォームから送信されたデータを受け取り、保存する処理を追加してください
@@ -18,5 +19,13 @@ class ShopsController < ApplicationController
     @shop.save
     redirect_to("/shops")
   end
+
+  def edit
+    #投稿の編集をして同一paramsに戻す
+    
+  end
+
+
+
 end
 

@@ -6,6 +6,14 @@ class FoodsController < ApplicationController
     @foodlist = Food.all
   end
 
+  def edit
+
+  end
+
+  def show
+    @food = Food.find_by(id: params[:id])
+  end
+
   #new.html.erbのためなので何も書かない
   def new
   end
