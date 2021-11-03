@@ -9,15 +9,15 @@
     <% when 'English' %>
         <%= food.english_name %>
     <% end %>
-    <%= link_to '詳細1', '/foods/'+food.id.to_s %>
-<a href='/foods/<%= food.id %>'>詳細2</a>
+    <%= link_to '詳細1', '/categories/'+food.id.to_s %>
+<a href='/categories/<%= food.id %>'>詳細2</a>
 
-<a href="/foods/edit">編集</a><br>
+<a href="/categories/<%= food.id %>/edit">編集</a><br>
 
 
 <%end%>
-<p>Find me in app/views/foods/index.html.erb</p>
+<p>Find me in app/views/categories/index.html.erb</p>
 
 <%# aがリンクという意味で、食べ物の新規投稿に飛ばす %>
-<a href="/foods/new">新規投稿</a>
+<a href="/categories/new">新規投稿</a>
 

@@ -4,11 +4,11 @@ Rails.application.routes.draw do
   get "shops/new" => "shops#new"
   get "shops/:id/edit"  => "shops#edit"
 
-  get "foods" => "foods#index"
-  post "foods/create" => "foods#create"
-  get "foods/new" => "foods#new"
-  get "foods/:id/edit" => "foods#edit"
-  get "foods/:id" => "foods#show"
+  get "categories" => "categories#index"
+  post "categories/create" => "categories#create"
+  get "categories/new" => "categories#new"
+  get "categories/:id/edit" => "categories#edit"
+  get "categories/:id" => "categories#show"
 
   
   #devise_for :users

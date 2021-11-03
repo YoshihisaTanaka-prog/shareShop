@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2021_10_21_092135) do
 
-  create_table "foods", force: :cascade do |t|
+  create_table "categories", force: :cascade do |t|
     t.string "japanese_name"
     t.string "english_name"
     t.datetime "created_at", precision: 6, null: false
