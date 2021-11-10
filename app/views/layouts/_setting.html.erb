@@ -1,5 +1,6 @@
 <% if user_signed_in? %>
     <% if current_user.admin %>
+        <li><%= link_to "Excel出力", load_path(format: :xlsx), method: :post %></li>
         <li>
             <%= select_tag 'setting', options_for_select(@setting_option, selected: "#"), onchange: 'location.href=value;' %>
         </li>

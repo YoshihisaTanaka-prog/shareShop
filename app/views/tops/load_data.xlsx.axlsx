@@ -1,0 +1,15 @@
+wb = xlsx_package.workbook
+@tables.each do |key, value|
+    wb.add_worksheet(name: key) do |sheet|
+        columns = value.column_names
+        sheet.add_row(columns)
+        objects = value.all
+        objects.each do |object|
+            row = []
+            columns.each do |column|
+                row.push(object[column])
+            end
+            sheet.add_row(row)
+        end
+    end
+end

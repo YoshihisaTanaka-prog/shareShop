@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get "categories/new" => "categories#new"
   get "categories/:id/edit" => "categories#edit"
   get "categories/:id" => "categories#show"
+  post 'load' => 'tops#load_data'
 
   
   #devise_for :users

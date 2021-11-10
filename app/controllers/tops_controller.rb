@@ -44,4 +44,15 @@ class TopsController < ApplicationController
             redirect_to root_path
         end
     end
+
+    def load_data
+        @tables = {'Category'=>Category, 'HeadLetter'=>HeadLetter, 'Shop'=>Shop, 'User'=>User}
+        respond_to do |format|
+          format.html
+          format.xlsx do
+            # ファイル名をここで指定する（動的にファイル名を変更できる）
+            response.headers['Content-Disposition'] = "attachment; filename=backup-#{Date.today}.xlsx"
+          end
+        end
+    end
 end
