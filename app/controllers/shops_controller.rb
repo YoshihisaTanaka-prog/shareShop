@@ -22,9 +22,16 @@ class ShopsController < ApplicationController
 
   def edit
     #投稿の編集をして同一paramsに戻す
-    
+    @shop = Shop.find_by(id: params[:id])  
   end
 
+  def update
+    @shop = Shop.find_by(id: params[:id])
+    @shop.japanese_name = params[:japanese_name]
+    @shop.english_name = params[:english_name]
+    @shop.save
+    redirect_to("/categories")
+  end
 
 
 end

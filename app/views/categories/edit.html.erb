@@ -7,12 +7,13 @@
         <div class="form-body">
           <!-- <textarea>タグにname属性を追加してください -->
           日本語
-          <input type="text" name="japanese_content">
+          <!--params[:japanese name]の中にカラム[japanese_name]入力した内容を入れる -->
+          <input type="text" name="japanese_name" value="<%=@category.japanese_name%>">
             <br> 
           English
-          <input type="text" name="english_content">
+          <input type="text" name="english_name" value="<%=@category.english_name%>">
           <br>
-          <input type="submit" value="投稿">
+          <input type="submit" value="編集">
         </div>
       </div>
     <% end %>
