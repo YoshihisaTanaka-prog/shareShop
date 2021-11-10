@@ -1,21 +1,27 @@
 <h1>Setting Category</h1>
 
-
-
-<%@categories.each do |c|%>
-    <% case @language %>
-    <% when 'Japanese' %>
+<% case @language %>
+<% when 'Japanese' %>
+    <%# 日本語版 %>
+    <%@categories.each do |c|%>
+        <%# 深い階層に入るためのリンク（aはリンクという意味） %>
         <a href='/categories/<%= c.id %>'><%= c.japanese_name %></a>
+        <%# 編集ページへのリンク %>
         <a href="/categories/<%= c.id %>/edit">編集</a><br>
-    <% when 'English' %>
+    <%end%>
+    <%# 食べ物の新規投稿に飛ばす %>
+    <a href="/categories/new?id=<%= params[:id] %>">新規投稿</a>
+<% when 'English' %>
+    <%# 英語版 %>
+    <%@categories.each do |c|%>
+        <%# 深い階層に入るためのリンク %>
         <a href='/categories/<%= c.id %>'><%= c.english_name %></a>
+        <%# 編集ページへのリンク %>
         <a href="/categories/<%= c.id %>/edit">edit</a><br>
-    <% end %>
-
-
-<%end%>
+    <%end%>
+    <%# 食べ物の新規投稿に飛ばす %>
+    <a href="/categories/new?id=<%= params[:id] %>">new</a>
+<% end %>
 <p>Find me in app/views/categories/index.html.erb</p>
 
-<%# aがリンクという意味で、食べ物の新規投稿に飛ばす %>
-<a href="/categories/new?id=<%= params[:id] %>">新規投稿</a>
 

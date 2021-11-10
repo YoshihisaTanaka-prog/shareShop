@@ -4,8 +4,10 @@ class CategoriesController < ApplicationController
     # 今まで投稿された店の名前を全部見れる
   def index
     if params[:id] == nil
+      # カテゴリーが選ばれていないとき、is_topカラムがtrueの物を取得する
       @categories = Category.where(is_top: true)
     else
+      # 選ばれたカテゴリーの子どものカテゴリーを取得する。
       @categories = Category.where(parent_id: params[:id])
     end
   end

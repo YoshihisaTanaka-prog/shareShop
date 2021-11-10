@@ -13,7 +13,8 @@
           English
           <input type="text" name="english_name" value="<%=@category.english_name%>">
           <br>
-          <input type="hidden" name="id" value=<%= params[:id] %>>
+          <%# idをコッソリ教えるためのコード %>
+          <input type="hidden" name="id" value=<%= @category.id %>>
           <input type="submit" value="編集">
         </div>
       </div>
