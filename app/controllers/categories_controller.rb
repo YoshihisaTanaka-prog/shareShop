@@ -36,7 +36,7 @@ class CategoriesController < ApplicationController
     @category = Category.new(japanese_name: params[:japanese_content] , english_name: params[:english_content])
     if params[:parent_id].blank? #parent_idが送られてない時
       @category.is_top = true
-      @parent_id = 0
+      @category.parent_id = 0
     else
       @category.is_top = false
       @category.parent_id =params[:parent_id]
