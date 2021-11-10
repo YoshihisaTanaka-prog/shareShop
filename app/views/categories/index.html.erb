@@ -1,20 +1,16 @@
-<h1>Items#index</h1>
+<h1>Setting Category</h1>
 
 
 
-<%@foodlist.each do |food|%>
+<%@categories.each do |c|%>
     <% case @language %>
     <% when 'Japanese' %>
-        <a href='/categories?id=<%= food.id %>'><%= food.japanese_name %></a>
-
+        <a href='/categories/<%= c.id %>'><%= c.japanese_name %></a>
+        <a href="/categories/<%= c.id %>/edit">編集</a><br>
     <% when 'English' %>
-        <%= food.english_name %>
-        <a href='/categories?id=<%= food.id %>'><%= food.english_name %></a>
+        <a href='/categories/<%= c.id %>'><%= c.english_name %></a>
+        <a href="/categories/<%= c.id %>/edit">edit</a><br>
     <% end %>
-    <%= link_to '詳細1', '/categories/'+food.id.to_s %>
-<a href='/categories/<%= food.id %>'>詳細2</a>
-
-<a href="/categories/<%= food.id %>/edit">編集</a><br>
 
 
 <%end%>

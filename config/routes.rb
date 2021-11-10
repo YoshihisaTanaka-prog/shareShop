@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   post "categories/create" => "categories#create"
   get "categories/new" => "categories#new"
   get "categories/:id/edit" => "categories#edit"
-  get "categories/:id" => "categories#show"
+  post "categories/update" => "categories#update"
+  get "categories/:id" => "categories#index"
   post 'load' => 'tops#load_data'
 
   

@@ -2,17 +2,18 @@
 <div class="main posts-new">
   <div class="container">
     <h1 class="form-heading">編集する</h1>
-    <%= form_tag("/categories/create") do %>
+    <%= form_tag("/categories/update") do %>
       <div class="form">
         <div class="form-body">
           <!-- <textarea>タグにname属性を追加してください -->
           日本語
           <!--params[:japanese name]の中にカラム[japanese_name]入力した内容を入れる -->
           <input type="text" name="japanese_name" value="<%=@category.japanese_name%>">
-            <br> 
+          <br> 
           English
           <input type="text" name="english_name" value="<%=@category.english_name%>">
           <br>
+          <input type="hidden" name="id" value=<%= params[:id] %>>
           <input type="submit" value="編集">
         </div>
       </div>
